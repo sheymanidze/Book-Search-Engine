@@ -56,8 +56,8 @@ query getSingleBook($bookId: ID!) {
     username
     savedBooks {
       bookId
-      title
       authors
+      title
       description
       image
       link
@@ -65,3 +65,20 @@ query getSingleBook($bookId: ID!) {
   }
 }
 `;
+
+export const QUERY_ME = gql`
+query me {
+  me{
+    _id
+    username
+    email
+    savedBooks {
+      bookId
+      authors
+      title
+      description
+      link
+      image
+    }
+  }
+}`;
