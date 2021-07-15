@@ -6,7 +6,25 @@ query allUsers {
     _id
     username
     email
-    svaedBooks {
+    savedBooks {
+      bookId
+      authprs
+      title
+      description
+      link
+      image
+    }
+  }
+}
+`;
+
+export const QUERY_USER = gql`
+query user ($username: String!) {
+  user(username: $username) {
+    _id
+    username
+    email
+    savedBooks {
       bookId
       authprs
       title
