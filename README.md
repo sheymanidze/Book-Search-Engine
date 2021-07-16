@@ -44,5 +44,10 @@
 
 
  # Future Developments
+
+   * If user clickes on the book, it will show all details about the book and where user can purchase the book
  
-   * User can create a list with the books that already have been read-“read” section. When the user search for a book and the book in the user's list (“read” section) it won’t show up in the search result
+   * User can create a list with the books that already have been read/own-“read” section. When the user search for a book and the book in the user's list (in “read” section) it won’t show up in the search result
+
+   * User will be able to add comments/reviews for the book  
+  
