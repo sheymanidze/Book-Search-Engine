@@ -6,16 +6,16 @@ const { User } = require('../models');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().select('-__v -password').populate('savedBooks');
+      return User.find();
     },
 
     user: async (parent, {username}) => {
-      return User.findOne({username}).select('-__v -password').populate('saveBooks');
+      return User.findOne({username}).select('-__v -password');
     },
 
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne ({_id: context.user._id})
+        return User.findOne ({_id: context.user._id});
       }
       throw new AuthenticationError('You need to be logged in!');
     }
@@ -51,9 +51,10 @@ const resolvers = {
       if (context.user) {
         const updateUser = await User.findByIdAndUpdate(
           {_id: context.user._id},
-          {$push: {saveBooks: bookData}},
+          {$push: {savedBooks: bookData}},
           {new: true, runValidators: true}
         );
+        console.log(updateUser)
         return updateUser;
       }
       throw new AuthenticationError('You need to be logged in!');
