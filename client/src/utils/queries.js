@@ -8,7 +8,7 @@ query allUsers {
     email
     savedBooks {
       bookId
-      authprs
+      authors
       title
       description
       link
@@ -26,7 +26,7 @@ query user ($username: String!) {
     email
     savedBooks {
       bookId
-      authprs
+      authors
       title
       description
       link
